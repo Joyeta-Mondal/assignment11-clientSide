@@ -1,95 +1,124 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import { FaBook, FaSignInAlt, FaUserPlus, FaSignOutAlt } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaBook, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 
-const Navbar = ({ user, onLogout }) => {
+const Navbar = ({ user, handleLogout }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    onLogout();
-    navigate("/");
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDarkMode ? "light" : "dark");
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-md px-4 md:px-8">
-      <div className="flex-1">
-        <NavLink to="/" className="text-2xl font-bold flex items-center">
-          <FaBook className="mr-2 text-primary" /> Library Management
-        </NavLink>
-      </div>
-
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 space-x-4">
+    <nav
+      className={`${
+        isDarkMode ? "bg-gray-800 text-white" : "bg-blue-600 text-white"
+      } sticky top-0 z-50 backdrop-blur-lg bg-opacity-30 shadow-md transition-all duration-500`}
+    >
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          {/* logo */}
+          <img
+            className="size-9"
+            src="https://img.icons8.com/?size=100&id=81348&format=png&color=000000"
+            alt="books_logo"
+          />
+          <span className="text-2xl font-bold">𝙱𝚘𝚘𝚔𝚆𝚊𝚛𝚝𝚜</span>
+        </div>
+        <ul className="flex items-center gap-6">
           <li>
-            <NavLink
+            <Link
               to="/"
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
+              className="hover:text-blue-300 transition duration-300"
             >
               Home
-            </NavLink>
+            </Link>
           </li>
-          {user && (
-            <>
-              <li>
-                <NavLink
-                  to="/all-books"
-                  className={({ isActive }) => (isActive ? "text-primary" : "")}
-                >
-                  All Books
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/add-book"
-                  className={({ isActive }) => (isActive ? "text-primary" : "")}
-                >
-                  Add Book
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/borrowed-books"
-                  className={({ isActive }) => (isActive ? "text-primary" : "")}
-                >
-                  Borrowed Books
-                </NavLink>
-              </li>
-            </>
-          )}
+          <li>
+            <Link
+              to="/all-books"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              All Books
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/add-book"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              Add Book
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/borrowed-books"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              Borrowed Books
+            </Link>
+          </li>
+        </ul>
+        <div className="flex items-center gap-4">
           {!user ? (
             <>
-              <li>
-                <NavLink to="/login" className="flex items-center">
-                  <FaSignInAlt className="mr-1" /> Log in
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/register" className="flex items-center">
-                  <FaUserPlus className="mr-1" /> Register
-                </NavLink>
-              </li>
+              <button
+                onClick={() => navigate("/login")}
+                className="btn btn-sm btn-outline text-white border-white hover:bg-blue-700"
+              >
+                Login
+              </button>
+              <button
+                onClick={() => navigate("/register")}
+                className="btn btn-sm btn-outline text-white border-white hover:bg-blue-700"
+              >
+                Register
+              </button>
             </>
           ) : (
             <>
-              <li className="dropdown dropdown-hover">
-                <div tabIndex={0} className="avatar cursor-pointer">
-                  <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src={user.photoURL} alt={user.displayName} />
-                  </div>
+              <div className="relative group">
+                <img
+                  src={user.photoURL || "https://via.placeholder.com/40"}
+                  alt="User"
+                  className="w-10 h-10 rounded-full cursor-pointer"
+                />
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-gray-800 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-300">
+                  {user.displayName || "User"}
                 </div>
-                <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li className="font-bold text-center">{user.displayName}</li>
-                </ul>
-              </li>
-              <li>
-                <button onClick={handleLogout} className="flex items-center">
-                  <FaSignOutAlt className="mr-1" /> Logout
-                </button>
-              </li>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="btn btn-sm btn-outline text-white border-white hover:bg-blue-700 flex items-center gap-2"
+              >
+                <FaSignOutAlt />
+                Logout
+              </button>
             </>
           )}
-        </ul>
+          <button
+            onClick={toggleDarkMode}
+            className="btn btn-sm btn-circle text-white border-none bg-transparent hover:bg-gray-700 transition duration-300"
+          >
+            {isDarkMode ? "🌞" : "🌙"}
+          </button>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
