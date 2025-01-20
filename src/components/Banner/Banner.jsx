@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import library_1 from "../../assets/library_1.jpeg";
 import library_2 from "../../assets/library_2.jpeg";
 import library_3 from "../../assets/library_3.jpg";
-import library_4 from "../../assets/library_4.jpeg";
+import library_4 from "../../assets/library_4.jpg";
 
 const Banner = () => {
   return (
@@ -62,10 +62,12 @@ const Banner = () => {
               alt="Join Our Community"
               className="w-full rounded-lg"
             />
-            <h2 className="text-2xl font-semibold">Join Our Community</h2>
+            <h2 className="text-2xl font-semibold">Study in a smarter way</h2>
             <p className="text-center">
               Be part of an ever-growing community of book lovers. Share,
-              discuss, and collaborate with other readers.
+              discuss, and collaborate with other readers. Open for all the
+              students and teachers of the school. If you're not one of these,
+              still you can enrich your knowledge here!
             </p>
           </div>
 

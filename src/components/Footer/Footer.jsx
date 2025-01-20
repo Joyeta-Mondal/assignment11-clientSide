@@ -160,7 +160,7 @@ const Footer = ({ isDarkMode }) => {
         </nav>
       </div>
       <div className="text-center p-5">
-        <p>Library Management System.</p>
+        <p>Bookwarts - ABC School Library</p>
         <p>All rights reserved. © Joyeta Mondal Kotha</p>
       </div>
     </footer>
