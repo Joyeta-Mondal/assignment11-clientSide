@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import Home from "./components/Home/Home.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
+import AllBooks from "./components/AllBooks/AllBooks.jsx";
 // import AllBooks from "./components/AllBooks/AllBooks.jsx";
 // import AddBook from "./components/AddBook/AddBook.jsx";
 // import BorrowABook from "./components/BorrowABook/BorrowABook.jsx";
