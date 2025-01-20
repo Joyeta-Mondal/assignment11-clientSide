@@ -7,11 +7,10 @@ const Footer = ({ isDarkMode }) => {
     >
       <div className="text-center mb-16">
         <div className="flex justify-center gap-4">
-          <link
-            type="image/png"
-            sizes="16x16"
-            rel="icon"
-            href=".../icons8-books-doodle-16.png"
+          <img
+            className="size-9"
+            src="https://img.icons8.com/?size=100&id=81348&format=png&color=000000"
+            alt="books_logo"
           />
           <h1 className="text-3xl font-bold text-center">𝙱𝚘𝚘𝚔𝚆𝚊𝚛𝚝𝚜</h1>
         </div>

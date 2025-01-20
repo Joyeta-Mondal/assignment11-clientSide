@@ -115,7 +115,7 @@ const Banner = () => {
   return (
     <div className="w-full h-screen bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
       {/* Banner Carousel */}
-      <div className="w-full max-w-4xl mx-auto pt-10">
+      <div className="w-full max-w-4xl mx-auto ">
         <Carousel
           autoPlay
           infiniteLoop

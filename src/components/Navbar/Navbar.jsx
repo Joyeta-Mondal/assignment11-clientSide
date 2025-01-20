@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaBook, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = ({ user, handleLogout }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -23,8 +23,8 @@ const Navbar = ({ user, handleLogout }) => {
   return (
     <nav
       className={`${
-        isDarkMode ? "bg-gray-800 text-white" : "bg-blue-600 text-white"
-      } sticky top-0 z-50 backdrop-blur-lg bg-opacity-30 shadow-md transition-all duration-500`}
+        isDarkMode ? "bg-gray-800 text-white" : "bg-purple-600 text-gray-800"
+      } sticky top-0 z-50 backdrop-blur-lg bg-opacity-30 shadow-md transition-all duration-100`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div
