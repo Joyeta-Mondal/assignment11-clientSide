@@ -35,13 +35,13 @@ const BookYourBook = () => {
   };
 
   return (
-    <div className=" my-10 max-w-xl mx-auto p-4 shadow-xl rounded-lg dark:bg-gray-800 dark:text-white">
+    <div className="py-10 mx-auto p-4 shadow-xl  dark:bg-gray-800 dark:text-white">
       <h2 className="text-3xl text-center font-bold my-8">
         Book Your Next Wished Book!
       </h2>
       <div>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+        <form className="max-w-xl mx-auto" onSubmit={handleSubmit}>
+          <div className="">
             <label className="block text-sm font-medium mb-1">Book Name</label>
             <input
               type="text"
@@ -52,7 +52,7 @@ const BookYourBook = () => {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="">
             <label className="block text-sm font-medium mb-1">
               Author Name
             </label>
@@ -78,7 +78,7 @@ const BookYourBook = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white py-2 mb-4 rounded hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+            className="w-full mt-4 bg-indigo-500 text-white py-2 mb-4 rounded hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
           >
             Book
           </button>

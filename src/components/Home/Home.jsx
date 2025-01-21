@@ -6,7 +6,7 @@ import NewComingBooks from "../NewComingBooks/NewComingBooks";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <Banner></Banner>
 
       <BookCategory></BookCategory>

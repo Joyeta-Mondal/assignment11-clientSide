@@ -1,8 +1,8 @@
 const Footer = ({ isDarkMode }) => {
   return (
     <footer
-      className={`p-10 mt-10 ${
-        isDarkMode ? "bg-gray-800 text-white" : "bg-[#e5e7eb] text-black"
+      className={`p-10 ${
+        isDarkMode ? "bg-gray-800 text-white" : "bg-gray-300 text-black"
       }`}
     >
       <div className="text-center mb-16">
