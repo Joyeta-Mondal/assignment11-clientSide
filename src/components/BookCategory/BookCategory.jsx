@@ -32,9 +32,9 @@ const BookCategories = () => {
     },
     {
       id: 4,
-      title: "Religion & Facts",
+      title: "History",
       description:
-        "Learn about different religions, facts, and autobiographies.",
+        "Learn about the magical history of humankind, facts, and autobiographies.",
       image:
         "https://img.freepik.com/premium-vector/history-textbook-symbols-icons-school-board_53500-1897.jpg?semt=ais_hybrid",
       route: "/categories/religion-and-facts",
@@ -66,7 +66,7 @@ const BookCategories = () => {
                 {category.description}
               </p>
               <button
-                className="bg-green-500 text-white py-2 px-4 rounded shadow hover:bg-green-600 mt-auto"
+                className="bg-purple-500 text-white py-2 px-4 rounded shadow hover:bg-indigo-600 mt-auto"
                 onClick={() => navigate(category.route)}
               >
                 Explore

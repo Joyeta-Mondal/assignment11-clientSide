@@ -78,7 +78,7 @@ const BookYourBook = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 mb-4 rounded hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+            className="w-full bg-indigo-500 text-white py-2 mb-4 rounded hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
           >
             Book
           </button>
