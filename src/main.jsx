@@ -9,11 +9,8 @@ import Home from "./components/Home/Home.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import AllBooks from "./components/AllBooks/AllBooks.jsx";
-// import AllBooks from "./components/AllBooks/AllBooks.jsx";
-// import AddBook from "./components/AddBook/AddBook.jsx";
-// import BorrowABook from "./components/BorrowABook/BorrowABook.jsx";
-// import BorrowedBook from "./components/BorrowedBook/BorrowedBook.jsx";
-// import PrivateRoute from "./routes/PrivateRoute.jsx";
+import AuthProvider from "./provider/AuthProvider.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -72,6 +69,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );
