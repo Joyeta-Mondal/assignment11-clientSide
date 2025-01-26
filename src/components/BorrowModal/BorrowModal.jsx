@@ -1,14 +1,45 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
-const BorrowModal = ({ book, onClose, onBorrow }) => {
+const BorrowModal = ({ book, onClose, onBorrow, borrowedBooks = [] }) => {
   const { user } = useAuth();
   const [returnDate, setReturnDate] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasBorrowedBook, setHasBorrowedBook] = useState(false);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    // Check if the user has already borrowed this book
+    const alreadyBorrowed = borrowedBooks.some(
+      (borrowedBook) =>
+        borrowedBook.id === book.id && borrowedBook.userId === user.uid
+    );
+    setHasBorrowedBook(alreadyBorrowed);
+  }, [borrowedBooks, book.id, user.uid]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onBorrow(returnDate);
+
+    if (hasBorrowedBook) {
+      toast.error("You have already borrowed this book.");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true); // Disable the button during submission
+
+      await onBorrow(returnDate); // Wait for the onBorrow action to complete
+
+      toast.success("Book borrowed successfully!");
+      onClose(); // Close the modal after successful borrowing
+    } catch (error) {
+      console.error("Error borrowing book:", error);
+      toast.error(
+        "An error occurred while borrowing the book. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false); // Re-enable the button
+    }
   };
 
   return (
@@ -49,14 +80,16 @@ const BorrowModal = ({ book, onClose, onBorrow }) => {
               type="button"
               onClick={onClose}
               className="mr-2 px-4 py-2 bg-gray-500 text-white rounded"
+              disabled={isSubmitting} // Disable cancel during submission
             >
               Cancel
             </button>
             <button
               type="submit"
               className="px-4 py-2 bg-blue-500 text-white rounded"
+              disabled={hasBorrowedBook || isSubmitting} // Disable the button if the user already borrowed the book or during submission
             >
-              Borrow
+              {isSubmitting ? "Processing..." : "Borrow"}
             </button>
           </div>
         </form>

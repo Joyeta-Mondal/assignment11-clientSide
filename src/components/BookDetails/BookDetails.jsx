@@ -5,7 +5,7 @@ import BorrowModal from "../BorrowModal/BorrowModal";
 import useAuth from "../../hooks/useAuth";
 
 const BookDetails = () => {
-  const {user}=useAuth()
+  const { user } = useAuth();
   const { id } = useParams();
   const axiosPublic = useAxiosPublic();
   const [book, setBook] = useState(null);
