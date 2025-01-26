@@ -6,8 +6,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
-// import loginImg from "../../assets/login.png";
+import registerImg from "../../assets/register.jpg";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -222,11 +221,11 @@ const Register = () => {
 
         {/* Image Section */}
         <div className="hidden lg:flex max-w-md justify-center items-center">
-          {/* <img
-            src={loginImg}
+          <img
+            src={registerImg}
             alt="Running"
             className="w-full p-4 object-cover rounded-md"
-          /> */}
+          />
         </div>
       </div>
     </div>

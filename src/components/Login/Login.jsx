@@ -4,8 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
-// import loginImg from '../../assets/login.png'
+import loginImg from "../../assets/Login_Image.jpeg";
 
 const Login = () => {
   const { user, loginUser, googleSignIn, logoutUser } = useContext(AuthContext);
@@ -83,7 +82,11 @@ const Login = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Image Section */}
             <div className="hidden lg:flex max-w-md justify-center items-center">
-              {/* <img src={loginImg} alt="Running" className="w-full p-4 object-cover rounded-md" /> */}
+              <img
+                src={loginImg}
+                alt="Running"
+                className="w-full p-4 object-cover rounded-md"
+              />
             </div>
             {/* Login Form */}
             <div className="max-w-md p-4 space-y-2">

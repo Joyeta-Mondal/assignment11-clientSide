@@ -69,7 +69,7 @@ const BookCategories = () => {
                 className="bg-purple-500 text-white py-2 px-4 rounded shadow hover:bg-indigo-600 mt-auto"
                 onClick={() => navigate(category.route)}
               >
-                Explore
+                Explore all the books!
               </button>
             </div>
           ))}
