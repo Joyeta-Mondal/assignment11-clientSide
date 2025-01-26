@@ -62,10 +62,6 @@ MongoDB Atlas: For managed database hosting.
 Axios: For making HTTP requests to the backend API.
 Toastify: For displaying user-friendly alerts (e.g., success or error messages after login, registration, borrow, etc.).
 
-# Server Github : https://github.com/Joyeta-Mondal/assignment11-serverSide
-
-# Client Github : https://github.com/Joyeta-Mondal/assignment11-clientSide
-
 # Live Link :
 
 # React + Vite
