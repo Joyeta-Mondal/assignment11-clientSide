@@ -13,6 +13,7 @@ import PrivateRoute from "./routes/PrivateRoute.jsx";
 import AddBook from "./components/AddBook/AddBook.jsx";
 import BookDetails from "./components/BookDetails/BookDetails.jsx";
 import BorrowedBooks from "./components/BorrowedBook/BorrowedBook.jsx";
+import UpdateBook from "./components/UpdateBook/UpdateBook.jsx";
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,13 @@ const router = createBrowserRouter([
             <BookDetails />
           </PrivateRoute>
         ),
+      },
+      {
+        path:'/book/update/:bookId',
+        element:<PrivateRoute>
+          <UpdateBook/>
+        </PrivateRoute>
+
       },
       {
         path: "/borrowed-books",
