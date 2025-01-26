@@ -99,12 +99,12 @@ const UpdateBook = () => {
             <option value="Fiction">Novel</option>
             <option value="Non-Fiction">Art History</option>
             <option value="Science">Religion</option>
-            <option value="History">Music</option>
-            <option value="History">Science</option>
-            <option value="History">Thriller</option>
+            <option value="Music">Music</option>
+            <option value="Science">Science</option>
+            <option value="Thriller">Thriller</option>
             <option value="History">History</option>
-            <option value="History">Drama</option>
-            <option value="History">Sci-fi</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-fi">Sci-fi</option>
           </select>
         </div>
         <div className="mb-4">

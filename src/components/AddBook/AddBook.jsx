@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const AddBook = () => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   console.log(user);
   const [formData, setFormData] = useState({
@@ -61,6 +62,7 @@ const AddBook = () => {
           description: "",
           rating: 1,
         });
+        navigate("/all-books");
       }
     } catch (error) {
       const errorMessage =
@@ -163,14 +165,12 @@ const AddBook = () => {
           />
         </div>
 
-        <Link to="/all-books">
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-2 rounded w-full"
-          >
-            Add Book
-          </button>
-        </Link>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white p-2 rounded w-full"
+        >
+          Add Book
+        </button>
       </form>
     </div>
   );
