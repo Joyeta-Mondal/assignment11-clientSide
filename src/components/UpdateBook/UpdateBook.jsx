@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 const UpdateBook = () => {
   const { bookId } = useParams();
@@ -19,9 +19,8 @@ const UpdateBook = () => {
       setBook(res.data);
     });
   }, [bookId]);
-  
-  console.log(book);  // Check the data being set in the state
-  
+
+  console.log(book); // Check the data being set in the state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +29,7 @@ const UpdateBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Updated book:", book);  // Check the data being sent
+    console.log("Updated book:", book); // Check the data being sent
     axiosPublic
       .put(`/api/books/${bookId}`, book) // Send the updated book data to the backend
       .then(() => {
@@ -40,12 +39,13 @@ const UpdateBook = () => {
         console.error("Error updating book:", err);
       });
   };
-  
 
   return (
     <div className="p-4">
       <h2 className="text-4xl font-bold text-center mb-6">Update Book</h2>
-      <form onSubmit={handleSubmit}> {/* Corrected onSubmit handler */}
+      <form onSubmit={handleSubmit}>
+        {" "}
+        {/* Corrected onSubmit handler */}
         <div className="mb-4">
           <label htmlFor="image" className="block text-sm font-bold mb-2">
             Image URL
@@ -96,11 +96,15 @@ const UpdateBook = () => {
             onChange={handleChange}
             className="w-full p-2 border rounded-md"
           >
-            <option value="Fiction">Fiction</option>
-            <option value="Non-Fiction">Non-Fiction</option>
-            <option value="Science">Science</option>
+            <option value="Fiction">Novel</option>
+            <option value="Non-Fiction">Art History</option>
+            <option value="Science">Religion</option>
+            <option value="History">Music</option>
+            <option value="History">Science</option>
+            <option value="History">Thriller</option>
             <option value="History">History</option>
-            {/* Add more categories as needed */}
+            <option value="History">Drama</option>
+            <option value="History">Sci-fi</option>
           </select>
         </div>
         <div className="mb-4">
@@ -118,9 +122,11 @@ const UpdateBook = () => {
             className="w-full p-2 border rounded-md"
           />
         </div>
-        <button type="submit" className="btn btn-primary w-full">
-          Submit
-        </button>
+        <Link to="/all-books">
+          <button type="submit" className="btn btn-primary w-full">
+            Submit
+          </button>
+        </Link>
       </form>
     </div>
   );

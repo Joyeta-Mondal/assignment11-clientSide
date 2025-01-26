@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const AddBook = () => {
-
-  const {user}=useAuth();
+  const { user } = useAuth();
   console.log(user);
   const [formData, setFormData] = useState({
     image: null,
@@ -19,7 +19,17 @@ const AddBook = () => {
     rating: 1,
   });
 
-  const categories = ["Novel", "Thriller", "History", "Drama", "Sci-Fi"];
+  const categories = [
+    "Novel",
+    "Art History",
+    "Religion",
+    "Music",
+    "Science",
+    "Thriller",
+    "History",
+    "Drama",
+    "Sci-Fi",
+  ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +46,7 @@ const AddBook = () => {
     try {
       const response = await axios.post(
         `${apiBaseUrl}/api/books`,
-        {...formData, userEmail:user?.email},
+        { ...formData, userEmail: user?.email },
         { withCredentials: true }
       );
 
@@ -153,14 +163,15 @@ const AddBook = () => {
           />
         </div>
 
-        <button
-          type="submit"
-          className="bg-blue-500 text-white p-2 rounded w-full"
-        >
-          Add Book
-        </button>
+        <Link to="/all-books">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white p-2 rounded w-full"
+          >
+            Add Book
+          </button>
+        </Link>
       </form>
-
     </div>
   );
 };

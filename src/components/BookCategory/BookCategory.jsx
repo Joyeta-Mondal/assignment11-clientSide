@@ -11,7 +11,7 @@ const BookCategories = () => {
       description: "Explore books about arts, music, drawing, and fashion.",
       image:
         "https://img.freepik.com/free-photo/digital-art-portrait-person-listening-music-headphones_23-2151065133.jpg",
-      route: "/categories/arts-and-music",
+      route: "/all-books",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const BookCategories = () => {
         "Dive into the world of science, technology, and innovation.",
       image:
         "https://img.freepik.com/free-photo/ai-nuclear-energy-industry-innovation-smart-grid-disruptive-technology_53876-143121.jpg",
-      route: "/categories/science-and-tech",
+      route: "/all-books",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const BookCategories = () => {
       description: "Discover captivating stories and fictional adventures.",
       image:
         "https://img.freepik.com/free-photo/turn-page-collage_23-2149876327.jpg",
-      route: "/categories/novels-and-fictions",
+      route: "/all-books",
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const BookCategories = () => {
         "Learn about the magical history of humankind, facts, and autobiographies.",
       image:
         "https://img.freepik.com/premium-vector/history-textbook-symbols-icons-school-board_53500-1897.jpg?semt=ais_hybrid",
-      route: "/categories/religion-and-facts",
+      route: "/all-books",
     },
   ];
 
