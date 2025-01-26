@@ -20,7 +20,7 @@ const UpdateBook = () => {
     });
   }, [bookId]);
 
-  console.log(book); // Check the data being set in the state
+  // console.log(book);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +29,7 @@ const UpdateBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Updated book:", book); // Check the data being sent
+    // console.log("Updated book:", book);
     axiosPublic
       .put(`/api/books/${bookId}`, book) // Send the updated book data to the backend
       .then(() => {

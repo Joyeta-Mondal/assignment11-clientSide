@@ -9,7 +9,7 @@ const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 const AddBook = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
   const [formData, setFormData] = useState({
     image: null,
     name: "",
@@ -39,7 +39,7 @@ const AddBook = () => {
       [name]: value,
     });
   };
-  console.log(formData);
+  // console.log(formData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

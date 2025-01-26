@@ -21,7 +21,7 @@ const BookDetails = () => {
         userId: user?.email, // Replace with actual user ID from authentication
         returnDate,
       });
-      console.log(data);
+      // console.log(data);
       setBook((prev) => ({ ...prev, quantity: prev.quantity - 1 }));
       setShowModal(false);
     } catch (error) {

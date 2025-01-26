@@ -10,12 +10,12 @@ const BorrowedBooks = () => {
 
   useEffect(() => {
     if (user?.email) {
-      console.log("Fetching borrowed books for:", user.email);
+      // console.log("Fetching borrowed books for:", user.email);
       setLoading(true);
       axiosPublic
         .get(`/api/borrowed-books?email=${user.email}`)
         .then((res) => {
-          console.log("API Response:", res.data);
+          // console.log("API Response:", res.data);
           setBorrowedBooks(res.data);
         })
         .catch((err) => console.error(err))
@@ -27,7 +27,9 @@ const BorrowedBooks = () => {
     axiosPublic
       .post(`/api/return-book/${borrowId}`)
       .then(() => {
-        setBorrowedBooks((prev) => prev.filter((book) => book._id !== borrowId));
+        setBorrowedBooks((prev) =>
+          prev.filter((book) => book._id !== borrowId)
+        );
       })
       .catch((err) => console.error(err));
   };
@@ -55,13 +57,19 @@ const BorrowedBooks = () => {
                 alt={borrowed.bookDetails?.name || "No Name"}
                 className="w-full h-40 object-cover mb-4 rounded"
               />
-              <h3 className="text-lg font-bold">{borrowed.bookDetails?.name || "No Name"}</h3>
-              <p className="text-sm text-gray-600">{borrowed.bookDetails?.category || "No Category"}</p>
-              <p className="text-sm">
-                <strong>Borrowed Date:</strong> {new Date(borrowed.borrowedAt).toLocaleDateString()}
+              <h3 className="text-lg font-bold">
+                {borrowed.bookDetails?.name || "No Name"}
+              </h3>
+              <p className="text-sm text-gray-600">
+                {borrowed.bookDetails?.category || "No Category"}
               </p>
               <p className="text-sm">
-                <strong>Return Date:</strong> {new Date(borrowed.returnDate).toLocaleDateString()}
+                <strong>Borrowed Date:</strong>{" "}
+                {new Date(borrowed.borrowedAt).toLocaleDateString()}
+              </p>
+              <p className="text-sm">
+                <strong>Return Date:</strong>{" "}
+                {new Date(borrowed.returnDate).toLocaleDateString()}
               </p>
               <button
                 onClick={() => handleReturn(borrowed._id)}

@@ -55,7 +55,7 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <Helmet>
-        <title>SprintSpace | Login</title>
+        <title>𝙱𝚘𝚘𝚔𝚆𝚊𝚛𝚝𝚜 | Login</title>
       </Helmet>
       <div className="w-full max-w-lg lg:max-w-5xl p-8 bg-white  dark:bg-gray-800 rounded-lg shadow-lg my-10 mx-4">
         {user ? (
