@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout/Layout.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
@@ -10,6 +9,10 @@ import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import AllBooks from "./components/AllBooks/AllBooks.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import AddBook from "./components/AddBook/AddBook.jsx";
+import BookDetails from "./components/BookDetails/BookDetails.jsx";
+import BorrowedBooks from "./components/BorrowedBook/BorrowedBook.jsx";
 
 
 const router = createBrowserRouter([
@@ -23,38 +26,38 @@ const router = createBrowserRouter([
         element: <Home />,
       },
 
-      // {
-      //   path: "/allBooks",
-      //   element: (
-      //     <PrivateRoute>
-      //       <AllBooks />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/addBook",
-      //   element: (
-      //     <PrivateRoute>
-      //       <AddBook />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/borrowABook",
-      //   element: (
-      //     <PrivateRoute>
-      //       <BorrowABook />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/borrowedBook",
-      //   element: (
-      //     <PrivateRoute>
-      //       <BorrowedBook />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/all-books",
+        element: (
+          <PrivateRoute>
+            <AllBooks />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add-book",
+        element: (
+          <PrivateRoute>
+            <AddBook/>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/book/details/:id",
+        element: (
+          <PrivateRoute>
+            <BookDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/borrowed-books",
+        element: (
+          <PrivateRoute>
+            <BorrowedBooks />
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/login",
         element: <Login />,

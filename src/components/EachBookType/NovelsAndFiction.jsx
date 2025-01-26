@@ -1,7 +1,7 @@
 import React from "react";
 
 const NovelsAndFiction = () => {
-  return <div></div>;
+  return <div>Novel Fiction</div>;
 };
 
 export default NovelsAndFiction;

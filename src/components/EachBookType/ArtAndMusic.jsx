@@ -1,7 +1,7 @@
 import React from "react";
 
 const ArtAndMusic = () => {
-  return <div></div>;
+  return <div>Art music</div>;
 };
 
 export default ArtAndMusic;

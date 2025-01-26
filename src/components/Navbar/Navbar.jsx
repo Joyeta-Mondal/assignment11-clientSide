@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
+import { AuthContext } from "../../provider/AuthProvider";
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
-const Navbar = ({ user, handleLogout }) => {
+const Navbar = () => {
+  const { user,logoutUser } = useAuth();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navigate = useNavigate();
 
@@ -19,6 +23,13 @@ const Navbar = ({ user, handleLogout }) => {
     document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", isDarkMode ? "light" : "dark");
   };
+
+
+  const handleLogout=async()=>{
+    await logoutUser()
+    navigate('/')
+    toast.success("Logged Out")
+  }
 
   return (
     <nav
