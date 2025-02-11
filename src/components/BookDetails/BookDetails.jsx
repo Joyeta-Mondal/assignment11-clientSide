@@ -56,7 +56,7 @@ const BookDetails = () => {
         {new Date(book.createdAt).toLocaleDateString()}
       </p>
       <button
-        className="mt-4 bg-blue-500 text-white p-2 rounded w-full disabled:bg-gray-400"
+        className="mt-4 bg-purple-500 text-white p-2 rounded w-full disabled:bg-gray-400"
         disabled={book.quantity === 0}
         onClick={() => setShowModal(true)}
       >

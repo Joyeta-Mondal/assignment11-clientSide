@@ -167,7 +167,7 @@ const AddBook = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded w-full"
+          className="bg-purple-500 text-white p-2 rounded w-full"
         >
           Add Book
         </button>

@@ -86,7 +86,7 @@ const BorrowModal = ({ book, onClose, onBorrow, borrowedBooks = [] }) => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded"
+              className="px-4 py-2 bg-indigo-500 text-white rounded"
               disabled={hasBorrowedBook || isSubmitting} // Disable the button if the user already borrowed the book or during submission
             >
               {isSubmitting ? "Processing..." : "Borrow"}
