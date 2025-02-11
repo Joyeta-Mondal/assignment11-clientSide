@@ -110,6 +110,14 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
+                  to="/your-added-books"
+                  className="hover:text-blue-300 transition duration-300"
+                >
+                  Your Added Books
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/borrowed-books"
                   className="hover:text-blue-300 transition duration-300"
                 >

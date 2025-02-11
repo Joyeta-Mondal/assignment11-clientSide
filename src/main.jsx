@@ -16,6 +16,7 @@ import BorrowedBooks from "./components/BorrowedBook/BorrowedBook.jsx";
 import UpdateBook from "./components/UpdateBook/UpdateBook.jsx";
 import AboutUs from "./components/About-us/About-us.jsx";
 import ContactUs from "./components/Contact-Us/ContactUs.jsx";
+import YourAddedBooks from "./components/YourAddedBooks/YourAddedBooks.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AllBooks />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/your-added-books",
+        element: (
+          <PrivateRoute>
+            <YourAddedBooks />
           </PrivateRoute>
         ),
       },
