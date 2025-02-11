@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <div className="w-full h-screen bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
       {/* Banner Carousel */}
-      <div className="w-full max-w-4xl mx-auto ">
+      <div className="w-full h-full">
         <Carousel
           autoPlay
           infiniteLoop
@@ -42,61 +42,72 @@ const Banner = () => {
           }
         >
           {/* Slide 1 */}
-          <div className="flex flex-col items-center gap-4 p-8">
+          <div className="relative w-full h-screen">
             <img
               src={library_1}
               alt="Explore Our Library"
-              className="w-full rounded-lg"
+              className="w-full h-full object-cover"
             />
-            <h2 className="text-2xl font-semibold">Explore Our Library</h2>
-            <p className="text-center">
-              Discover thousands of books across various genres and categories.
-              Bookwarts is your ultimate hub for knowledge and entertainment.
-            </p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+              <h2 className="text-4xl font-bold mb-4">Explore Our Library</h2>
+              <p className="text-center max-w-2xl">
+                Discover thousands of books across various genres and
+                categories. Bookwarts is your ultimate hub for knowledge and
+                entertainment.
+              </p>
+            </div>
           </div>
 
           {/* Slide 2 */}
-          <div className="flex flex-col items-center gap-4 p-8">
+          <div className="relative w-full h-screen">
             <img
               src={library_2}
               alt="Join Our Community"
-              className="w-full rounded-lg"
+              className="w-full h-full object-cover"
             />
-            <h2 className="text-2xl font-semibold">Study in a smarter way</h2>
-            <p className="text-center">
-              Be part of an ever-growing community of book lovers. Share,
-              discuss, and collaborate with other readers. Open for all the
-              students and teachers of the school. If you're not one of these,
-              still you can enrich your knowledge here!
-            </p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+              <h2 className="text-4xl font-bold mb-4">
+                Study in a Smarter Way
+              </h2>
+              <p className="text-center max-w-2xl">
+                Be part of an ever-growing community of book lovers. Share,
+                discuss, and collaborate with other readers. Open for all the
+                students and teachers of the school. If you're not one of these,
+                still you can enrich your knowledge here!
+              </p>
+            </div>
           </div>
 
           {/* Slide 3 */}
-          <div className="flex flex-col items-center gap-4 p-8">
+          <div className="relative w-full h-screen">
             <img
               src={library_3}
               alt="Upcoming Events"
-              className="w-full rounded-lg"
+              className="w-full h-full object-cover"
             />
-            <h2 className="text-2xl font-semibold">Upcoming Events</h2>
-            <p className="text-center">
-              Don't miss out on exciting book fairs, author meetups, and library
-              events.
-            </p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+              <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
+              <p className="text-center max-w-2xl">
+                Don't miss out on exciting book fairs, author meetups, and
+                library events.
+              </p>
+            </div>
           </div>
 
           {/* Slide 4 */}
-          <div className="flex flex-col items-center gap-4 p-8">
+          <div className="relative w-full h-screen">
             <img
               src={library_4}
               alt="Advanced Search"
-              className="w-full rounded-lg"
+              className="w-full h-full object-cover"
             />
-            <h2 className="text-2xl font-semibold">Advanced Search</h2>
-            <p className="text-center">
-              Use our smart search feature to find books and resources in
-              seconds.
-            </p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+              <h2 className="text-4xl font-bold mb-4">Advanced Search</h2>
+              <p className="text-center max-w-2xl">
+                Use our smart search feature to find books and resources in
+                seconds.
+              </p>
+            </div>
           </div>
         </Carousel>
       </div>

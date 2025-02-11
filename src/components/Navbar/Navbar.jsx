@@ -33,7 +33,9 @@ const Navbar = () => {
   return (
     <nav
       className={`${
-        isDarkMode ? "bg-gray-800 text-white" : "bg-purple-600 text-gray-800"
+        isDarkMode
+          ? "bg-gradient-to-r from-gray-500 to-gray-800 text-white"
+          : "bg-gradient-to-r from-purple-300 to-indigo-500 text-gray-800"
       } sticky top-0 z-50 backdrop-blur-lg bg-opacity-30 shadow-md transition-all duration-100`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
