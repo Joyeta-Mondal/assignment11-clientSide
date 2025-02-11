@@ -48,9 +48,11 @@ const Banner = () => {
               alt="Explore Our Library"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
-              <h2 className="text-4xl font-bold mb-4">Explore Our Library</h2>
-              <p className="text-center max-w-2xl">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-4 sm:p-8">
+              <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">
+                Explore Our Library
+              </h2>
+              <p className="text-center text-sm sm:text-base max-w-md sm:max-w-2xl">
                 Discover thousands of books across various genres and
                 categories. Bookwarts is your ultimate hub for knowledge and
                 entertainment.
@@ -65,11 +67,11 @@ const Banner = () => {
               alt="Join Our Community"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
-              <h2 className="text-4xl font-bold mb-4">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-4 sm:p-8">
+              <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">
                 Study in a Smarter Way
               </h2>
-              <p className="text-center max-w-2xl">
+              <p className="text-center text-sm sm:text-base max-w-md sm:max-w-2xl">
                 Be part of an ever-growing community of book lovers. Share,
                 discuss, and collaborate with other readers. Open for all the
                 students and teachers of the school. If you're not one of these,
@@ -85,9 +87,11 @@ const Banner = () => {
               alt="Upcoming Events"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
-              <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
-              <p className="text-center max-w-2xl">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-4 sm:p-8">
+              <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">
+                Upcoming Events
+              </h2>
+              <p className="text-center text-sm sm:text-base max-w-md sm:max-w-2xl">
                 Don't miss out on exciting book fairs, author meetups, and
                 library events.
               </p>
@@ -101,9 +105,11 @@ const Banner = () => {
               alt="Advanced Search"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
-              <h2 className="text-4xl font-bold mb-4">Advanced Search</h2>
-              <p className="text-center max-w-2xl">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-4 sm:p-8">
+              <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">
+                Advanced Search
+              </h2>
+              <p className="text-center text-sm sm:text-base max-w-md sm:max-w-2xl">
                 Use our smart search feature to find books and resources in
                 seconds.
               </p>
