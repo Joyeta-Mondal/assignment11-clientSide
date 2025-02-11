@@ -44,20 +44,21 @@ const BookCategories = () => {
   return (
     <section className="py-8 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white">
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white animate-fade-in">
           Book Categories
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <div
               key={category.id}
-              className="card bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg p-4 text-center cursor-pointer hover:shadow-xl transition-all flex flex-col"
+              className="card bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg p-4 text-center cursor-pointer hover:shadow-xl transition-all flex flex-col animate-slide-in"
+              style={{ animationDelay: `${index * 0.2}s` }} // Staggered animation delay
               onClick={() => navigate(category.route)}
             >
               <img
                 src={category.image}
                 alt={category.title}
-                className="w-full h-[20rem] object-cover rounded-md mb-4"
+                className="w-full h-[20rem] object-cover rounded-md mb-4 hover:scale-105 transition-transform"
               />
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
                 {category.title}
@@ -66,7 +67,7 @@ const BookCategories = () => {
                 {category.description}
               </p>
               <button
-                className="bg-purple-500 text-white py-2 px-4 rounded shadow hover:bg-indigo-600 mt-auto"
+                className="bg-purple-500 text-white py-2 px-4 rounded shadow hover:bg-indigo-600 mt-auto transform hover:scale-105 transition-transform"
                 onClick={() => navigate(category.route)}
               >
                 Explore all the books!
