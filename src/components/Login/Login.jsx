@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import loginImg from "../../assets/Login_Image.jpeg";
+import loginImg from "../../assets/Login_Image.jpg";
 
 const Login = () => {
   const { user, loginUser, googleSignIn, logoutUser } = useContext(AuthContext);
@@ -137,13 +137,13 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 font-semibold text-white bg-sky-500 rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  className="w-full px-4 py-2 font-semibold text-white bg-purple-400 rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 >
                   Login
                 </button>
                 <button
                   onClick={() => handleGoogleSignIn()}
-                  className="w-full flex justify-center items-center gap-2 px-4 py-2 font-semibold border border-sky-500 text-white rounded-md hover:bg-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  className="w-full flex justify-center items-center gap-2 px-4 py-2 font-semibold border border-purple-500 text-white rounded-md hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 >
                   <FcGoogle />
                   <p className="text-gray-800 dark:text-white">
@@ -160,7 +160,7 @@ const Login = () => {
                         state: { email: formData.email },
                       })
                     }
-                    className="text-sky-500 hover:underline cursor-pointer"
+                    className="text-violet-500 hover:underline cursor-pointer"
                   >
                     Reset
                   </span>
@@ -171,7 +171,7 @@ const Login = () => {
                   <span
                     onClick={() => navigate("/register")}
                     href="/register"
-                    className="text-sky-500 hover:underline"
+                    className="text-violet-500 hover:underline"
                   >
                     Register here
                   </span>
