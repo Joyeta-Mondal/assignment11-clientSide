@@ -68,21 +68,22 @@ const NewComingBooks = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center">
+        <h2 className="text-3xl font-bold mb-6 text-center animate-fade-in">
           New Coming Books
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-          {books.map((book) => (
+          {books.map((book, index) => (
             <div
               key={book.id}
               className={`card w-full shadow-lg rounded-lg p-4 ${
                 isDarkMode
                   ? "bg-gray-800 text-white hover:shadow-gray-700"
                   : "bg-white text-gray-800 hover:shadow-2xl"
-              } transition duration-300`}
+              } transition duration-300 animate-slide-in-right`}
+              style={{ animationDelay: `${index * 0.2}s` }} // Staggered animation delay
             >
               <img
-                className="w-full h-[20rem] object-cover rounded-md mb-4"
+                className="w-full h-[20rem] object-cover rounded-md mb-4 hover:scale-105 transition-transform"
                 src={book.image}
                 alt={book.title}
               />
