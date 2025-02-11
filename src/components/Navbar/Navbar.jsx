@@ -80,6 +80,14 @@ const Navbar = () => {
               About Us
             </Link>
           </li>
+          <li>
+            <Link
+              to="/contact-us"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              Contact Us
+            </Link>
+          </li>
           {user && (
             <>
               <li>
