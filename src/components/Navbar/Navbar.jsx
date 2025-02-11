@@ -72,6 +72,14 @@ const Navbar = () => {
               Home
             </Link>
           </li>
+          <li>
+            <Link
+              to="/about-us"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              About Us
+            </Link>
+          </li>
           {user && (
             <>
               <li>
