@@ -4,7 +4,7 @@ const Footer = ({ isDarkMode }) => {
       className={`p-10 ${
         isDarkMode
           ? "bg-gradient-to-r from-gray-400 to-gray-600 text-white"
-          : "bg-gradient-to-r from-purple-400 to-indigo-500 text-black"
+          : "bg-gradient-to-r from-purple-200 to-indigo-400 text-black"
       }`}
     >
       <div className="text-center mb-16">

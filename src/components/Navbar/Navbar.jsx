@@ -82,13 +82,19 @@ const Navbar = () => {
               About Us
             </Link>
           </li>
+
           <li>
-            <Link
-              to="/contact-us"
+            <button
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="hover:text-blue-300 transition duration-300"
             >
               Contact Us
-            </Link>
+            </button>
           </li>
           {user && (
             <>
