@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -9,6 +9,31 @@ const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  // contact us section
+
+  const location = useLocation();
+
+  const handleScrollToContact = () => {
+    if (location.pathname !== "/") {
+      // Navigate to home first
+      navigate("/");
+
+      // Wait for React Router to complete navigation before scrolling
+      setTimeout(() => {
+        const contactSection = document.getElementById("contact");
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); // Adjust delay if needed
+    } else {
+      // If already on home page, just scroll
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -69,6 +94,11 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
+              onClick={() => {
+                if (window.location.pathname === "/") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               className="hover:text-blue-300 transition duration-300"
             >
               Home
@@ -85,17 +115,13 @@ const Navbar = () => {
 
           <li>
             <button
-              onClick={() => {
-                const contactSection = document.getElementById("contact");
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
+              onClick={handleScrollToContact}
               className="hover:text-blue-300 transition duration-300"
             >
               Contact Us
             </button>
           </li>
+
           {user && (
             <>
               <li>
