@@ -64,7 +64,7 @@ const Navbar = () => {
         <ul
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } lg:flex lg:items-center lg:gap-6 absolute lg:static left-0 right-0 bg-purple-600 lg:bg-transparent top-16 lg:top-0 p-6 lg:p-0`}
+          } lg:flex lg:items-center lg:gap-6 absolute lg:static left-0 right-0 bg-purple-600 dark:bg-slate-600 lg:bg-transparent top-16 lg:top-0 p-6 lg:p-0`}
         >
           <li>
             <Link

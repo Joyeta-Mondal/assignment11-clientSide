@@ -2,10 +2,8 @@ const Footer = ({ isDarkMode }) => {
   return (
     <footer
       className={`p-10 ${
-        isDarkMode
-          ? "bg-gradient-to-r from-gray-400 to-gray-700 text-white"
-          : "bg-gradient-to-r from-purple-200 to-indigo-300  text-black"
-      }`}
+        isDarkMode ? " " : ""
+      }  dark:bg-gray-800 dark:text-gray-100`}
     >
       <div className="text-center mb-16">
         <div className="flex justify-center gap-4">
@@ -17,7 +15,7 @@ const Footer = ({ isDarkMode }) => {
           <h1 className="text-3xl font-bold text-center">𝙱𝚘𝚘𝚔𝚆𝚊𝚛𝚝𝚜</h1>
         </div>
 
-        <p className="font-medium m-2 text-[#09080F99]">
+        <p className="font-medium m-2 dark:text-gray-100 text-[#09080F99]">
           Manage all the books with more efficiency!
         </p>
       </div>
@@ -150,15 +148,27 @@ const Footer = ({ isDarkMode }) => {
         </nav>
         <nav className="grid grid-cols-1 md:mb-0 mb-4">
           <h6 className="font-bold mb-4">Company</h6>
-          <a className="link link-hover text-[#09080F99]">About us</a>
-          <a className="link link-hover text-[#09080F99]">Careers</a>
-          <a className="link link-hover text-[#09080F99]">Contact</a>
+          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+            About us
+          </a>
+          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+            Careers
+          </a>
+          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+            Contact
+          </a>
         </nav>
         <nav className="grid grid-cols-1 md:mb-0 mb-4">
           <h6 className="font-bold mb-4">Legal</h6>
-          <a className="link link-hover text-[#09080F99]">Terms of use</a>
-          <a className="link link-hover text-[#09080F99]">Privacy policy</a>
-          <a className="link link-hover text-[#09080F99]">Cookie policy</a>
+          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+            Terms of use
+          </a>
+          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+            Privacy policy
+          </a>
+          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+            Cookie policy
+          </a>
         </nav>
       </div>
       <div className="text-center p-5">
