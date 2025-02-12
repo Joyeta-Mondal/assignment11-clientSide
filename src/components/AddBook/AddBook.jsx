@@ -3,15 +3,14 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-
+import AddBookImg from "../../assets/addBook.jpg";
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const AddBook = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  // console.log(user);
   const [formData, setFormData] = useState({
-    image: null,
+    image: "",
     name: "",
     quantity: 1,
     author: "",
@@ -39,7 +38,6 @@ const AddBook = () => {
       [name]: value,
     });
   };
-  // console.log(formData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,106 +70,131 @@ const AddBook = () => {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto border rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">Add Book</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block mb-2">Book Cover Image</label>
-          <input
-            type="text"
-            name="image"
-            value={formData.image}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-          />
-        </div>
+    <div
+      className="relative flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${AddBookImg})` }}
+    >
+      {/* Blurred Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
 
-        <div className="mb-4">
-          <label className="block mb-2">Book Title</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-            required
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-2">Quantity</label>
-          <input
-            type="number"
-            name="quantity"
-            value={formData.quantity}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-            min="1"
-            required
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-2">Author Name</label>
-          <input
-            type="text"
-            name="author"
-            value={formData.author}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-            required
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-2">Category</label>
-          <select
-            name="category"
-            value={formData.category}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-          >
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-2">Short Description</label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-            rows="4"
-            required
-          ></textarea>
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-2">Rating</label>
-          <input
-            type="number"
-            name="rating"
-            value={formData.rating}
-            onChange={handleInputChange}
-            className="border p-2 w-full"
-            min="1"
-            max="5"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="bg-purple-500 text-white p-2 rounded w-full"
-        >
+      {/* Content Box */}
+      <div className="relative p-6 max-w-md w-full bg-white/40 dark:bg-gray-900/80 shadow-lg rounded-lg backdrop-blur-md">
+        <h2 className="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">
           Add Book
-        </button>
-      </form>
+        </h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Book Cover Image
+            </label>
+            <input
+              type="text"
+              name="image"
+              value={formData.image}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Book Title
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Quantity
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              value={formData.quantity}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+              min="1"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Author Name
+            </label>
+            <input
+              type="text"
+              name="author"
+              value={formData.author}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Category
+            </label>
+            <select
+              name="category"
+              value={formData.category}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Short Description
+            </label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200">
+              Rating
+            </label>
+            <input
+              type="number"
+              name="rating"
+              value={formData.rating}
+              onChange={handleInputChange}
+              className="border p-2 w-full rounded-md"
+              min="1"
+              max="5"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-md w-full"
+          >
+            Add Book
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
