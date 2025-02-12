@@ -2,20 +2,31 @@ import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import BookCard from "../BookCard/BookCard";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader"; // Import Loader Component
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [viewMode, setViewMode] = useState("card"); // Track view mode
   const [showAvailable, setShowAvailable] = useState(false); // Filter to show available books only
+  const [loading, setLoading] = useState(true); // Track loading state
   const axiosPublic = useAxiosPublic();
 
   // Fetch all books (only once when the component mounts)
   useEffect(() => {
-    axiosPublic.get(`/api/books`).then((res) => {
-      setBooks(res.data);
-      setFilteredBooks(res.data); // Initially show all books
-    });
+    setLoading(true);
+    axiosPublic
+      .get(`/api/books`)
+      .then((res) => {
+        setBooks(res.data);
+        setFilteredBooks(res.data); // Initially show all books
+      })
+      .catch((error) => {
+        console.error("Error fetching books:", error);
+      })
+      .finally(() => {
+        setLoading(false); // Hide loader after data fetch
+      });
   }, []); // Empty dependency array ensures this runs once on mount
 
   // Handle the filter for available books (quantity > 0)
@@ -36,6 +47,8 @@ const AllBooks = () => {
   const handleViewModeChange = (e) => {
     setViewMode(e.target.value);
   };
+
+  if (loading) return <Loader />; // Show loader while fetching data
 
   return (
     <div className="p-4">
@@ -89,7 +102,6 @@ const AllBooks = () => {
                 <th className="border px-4 py-2">Quantity</th>
                 <th className="border px-4 py-2">Rating</th>
                 <th className="border px-4 py-2">Details</th>
-
                 <th className="border px-4 py-2">Action</th>
               </tr>
             </thead>
@@ -115,7 +127,6 @@ const AllBooks = () => {
                       </button>
                     </Link>
                   </td>
-
                   <td className="border px-4 py-2">
                     <Link to={`/book/update/${book._id}`}>
                       <button className="btn btn-primary">Update</button>
