@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import NewComingImg from "../../assets/NewComingBooks.jpg";
 const NewComingBooks = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -63,9 +63,18 @@ const NewComingBooks = () => {
 
   return (
     <section
-      className={`py-8 ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+      className={`py-8 relative w-full ${
+        isDarkMode ? "bg-gray-900 text-white" : " text-gray-100"
       }`}
+      style={
+        !isDarkMode
+          ? {
+              backgroundImage: `url(${NewComingImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }
+          : {}
+      }
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6 text-center animate-fade-in">

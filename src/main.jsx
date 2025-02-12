@@ -15,7 +15,6 @@ import BookDetails from "./components/BookDetails/BookDetails.jsx";
 import BorrowedBooks from "./components/BorrowedBook/BorrowedBook.jsx";
 import UpdateBook from "./components/UpdateBook/UpdateBook.jsx";
 import AboutUs from "./components/About-us/About-us.jsx";
-import ContactUs from "./components/Contact-Us/ContactUs.jsx";
 import YourAddedBooks from "./components/YourAddedBooks/YourAddedBooks.jsx";
 
 const router = createBrowserRouter([
@@ -32,10 +31,6 @@ const router = createBrowserRouter([
         path: "/about-us",
         element: <AboutUs />,
       },
-      // {
-      //   path: "/contact-us",
-      //   element: <ContactUs />,
-      // },
       {
         path: "/all-books",
         element: (

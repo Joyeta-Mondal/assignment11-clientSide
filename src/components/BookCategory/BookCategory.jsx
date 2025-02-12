@@ -42,7 +42,7 @@ const BookCategories = () => {
   ];
 
   return (
-    <section className="py-8 bg-white dark:bg-gray-900">
+    <section className="py-8 bg-pink-100 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white animate-fade-in">
           Book Categories
