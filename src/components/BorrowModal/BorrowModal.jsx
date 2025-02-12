@@ -44,7 +44,7 @@ const BorrowModal = ({ book, onClose, onBorrow, borrowedBooks = [] }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white rounded-lg p-6 shadow-lg max-w-md w-full">
+      <div className="bg-purple-300 rounded-lg p-6 shadow-lg max-w-md w-full">
         <h2 className="text-lg font-bold mb-4">Borrow {book.name}</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -86,7 +86,7 @@ const BorrowModal = ({ book, onClose, onBorrow, borrowedBooks = [] }) => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-indigo-500 text-white rounded"
+              className="px-4 py-2 bg--500 text-white rounded"
               disabled={hasBorrowedBook || isSubmitting} // Disable the button if the user already borrowed the book or during submission
             >
               {isSubmitting ? "Processing..." : "Borrow"}
