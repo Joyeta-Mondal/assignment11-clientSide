@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Footer = ({ isDarkMode }) => {
   return (
     <footer
@@ -148,27 +149,34 @@ const Footer = ({ isDarkMode }) => {
         </nav>
         <nav className="grid grid-cols-1 md:mb-0 mb-4">
           <h6 className="font-bold mb-4">Company</h6>
-          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+          <Link
+            to="/about-us"
+            className="link link-hover dark:text-gray-100 text-[#09080F99]"
+          >
             About us
-          </a>
-          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
-            Careers
-          </a>
-          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
-            Contact
-          </a>
+          </Link>
+          <Link
+            to="/library-card"
+            className="link link-hover dark:text-gray-100 text-[#09080F99]"
+          >
+            Get Library Card
+          </Link>
         </nav>
         <nav className="grid grid-cols-1 md:mb-0 mb-4">
           <h6 className="font-bold mb-4">Legal</h6>
-          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
-            Terms of use
-          </a>
-          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
-            Privacy policy
-          </a>
-          <a className="link link-hover dark:text-gray-100 text-[#09080F99]">
+          <Link
+            to="/terms-policy"
+            className="link link-hover dark:text-gray-100 text-[#09080F99]"
+          >
+            Terms & Policy
+          </Link>
+
+          <Link
+            to="/cookie-policy"
+            className="link link-hover dark:text-gray-100 text-[#09080F99]"
+          >
             Cookie policy
-          </a>
+          </Link>
         </nav>
       </div>
       <div className="text-center p-5">

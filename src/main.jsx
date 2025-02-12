@@ -16,6 +16,9 @@ import BorrowedBooks from "./components/BorrowedBook/BorrowedBook.jsx";
 import UpdateBook from "./components/UpdateBook/UpdateBook.jsx";
 import AboutUs from "./components/About-us/About-us.jsx";
 import YourAddedBooks from "./components/YourAddedBooks/YourAddedBooks.jsx";
+import LibraryCard from "./components/LibraryCard/LibraryCard.jsx";
+import TermsPolicy from "./components/TermsPolicy/TermsPolicy.jsx";
+import CookiePolicy from "./components/Cookie/CookiePolicy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,11 +36,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-books",
-        element: (
-          <PrivateRoute>
-            <AllBooks />
-          </PrivateRoute>
-        ),
+        element: <AllBooks />,
+      },
+      {
+        path: "/library-card",
+        element: <LibraryCard />,
+      },
+      {
+        path: "/terms-policy",
+        element: <TermsPolicy />,
+      },
+      {
+        path: "/cookie-policy",
+        element: <CookiePolicy />,
       },
       {
         path: "/your-added-books",
